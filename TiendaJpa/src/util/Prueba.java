@@ -1,5 +1,7 @@
 package util;
 
+import java.util.List;
+
 import dao.ClienteDao;
 import dao.ServicioDao;
 import dao.TiendaDao;
@@ -48,6 +50,23 @@ public class Prueba {
         sDao.insert(s);
         
         //seguir tieda
+        Cliente c2 = new Cliente();
+        c2.setNombre("Daniel");
+        ClienteDao cDao2 = new ClienteDao();
+        Cliente aux = cDao2.findByFieldObject(Cliente.class, "nombre", c2.getNombre());
+        //List<Cliente> l = new List();
+        //l.add(aux);
+        //ayuda.setClientes(l);
         
+        //actualizar tienda
+
+        Tienda tienda = new Tienda();
+        TiendaDao tDao3 = new TiendaDao();
+
+        tienda.setNombre("hola");
+        Tienda aux2 = tDao3.findByFieldObject(Tienda.class, "nombre", tienda.getNombre());
+        aux2.setDescripcion("Hola a todos");
+        aux2.setImagen("https://i.pinimg.com/originals/7f/7e/73/7f7e73c3ad511bf4b3c4a77ffeec2a6a.jpg");
+        tDao3.update(aux2);
 	}
 }
