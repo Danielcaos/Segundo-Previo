@@ -33,7 +33,7 @@ public class Conexion<T> {
 	
 	public static EntityManager getEm(){
 		if ( em == null ) {
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("Utilidad");
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("TiendaJpa");
             em = emf.createEntityManager();
         }
 		return em;

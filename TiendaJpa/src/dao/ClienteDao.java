@@ -4,7 +4,7 @@ import entities.Cliente;
 import util.Conexion;
 
 public class ClienteDao extends Conexion<Cliente> implements GenericDao<Cliente> {
-	public ClienteDao{
+	public ClienteDao(){
 		super(Cliente.class);
 	}
 }
